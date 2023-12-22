@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package avatarex;
+
+message Form {
+  string form_type = 1;
+  string email = 2;
+  string phone = 3;
+  string text = 4;
+}

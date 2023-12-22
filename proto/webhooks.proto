@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package avatarex;
+
+message WebhookActivateRequest {
+  int32 account_id = 1;
+  int32 phone = 2;
+  string name = 3;
+  string email = 4;
+  string domain = 5;
+  int32 user_count = 6;
+}
+
+message WebhookDeactivateRequest {
+  int32 account_id = 1;
+}
+
+message WebhookEventRequest {
+  EventMessage event = 1;
+}

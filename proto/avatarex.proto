@@ -1,0 +1,52 @@
+syntax = "proto3";
+import "subscription.proto";
+import "form.proto";
+import "webhooks.proto";
+
+package avatarex;
+
+message Profile {
+  string email = 1;
+  Subscription subscription = 2;
+}
+
+message ApiResponse {
+  bool success = 1;
+  google.protobuf.Any data = 2;
+  float time = 3;
+}
+
+message SignupRequest {
+  string email = 1;
+  int32 account_id = 2;
+}
+
+message SigninRequest {
+  string email = 1;
+  string password = 2;
+  int32 account_id = 3;
+}
+
+message ProfileRequest {
+  int32 account_id = 1;
+}
+
+message SignoutRequest {
+  int32 account_id = 1;
+}
+
+message FormRequest {
+  int32 account_id = 1;
+  Form form = 2;
+}
+
+service AvatarexService {
+  rpc Signup (SignupRequest) returns (ApiResponse);
+  rpc Signin (SigninRequest) returns (ApiResponse);
+  rpc Profile (ProfileRequest) returns (ApiResponse);
+  rpc Signout (SignoutRequest) returns (ApiResponse);
+  rpc Form (FormRequest) returns (ApiResponse);
+  rpc WebhookActivate (WebhookActivateRequest) returns (ApiResponse);
+  rpc WebhookDeactivate (WebhookDeactivateRequest) returns (ApiResponse);
+  rpc WebhookEvent (WebhookEventRequest) returns (ApiResponse);
+}

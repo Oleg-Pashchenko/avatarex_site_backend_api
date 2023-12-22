@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package avatarex;
+
+message Subscription {
+  bool is_active = 1;
+  string name = 2;
+  string paid_till = 3;
+}
