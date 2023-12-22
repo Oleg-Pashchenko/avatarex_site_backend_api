@@ -2,6 +2,7 @@ syntax = "proto3";
 import "subscription.proto";
 import "form.proto";
 import "webhooks.proto";
+import "google/protobuf/any.proto";
 
 package avatarex;
 

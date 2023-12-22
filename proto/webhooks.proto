@@ -15,6 +15,11 @@ message WebhookDeactivateRequest {
   int32 account_id = 1;
 }
 
+message EventMessage {
+  // ваша структура EventMessage
+}
+
+
 message WebhookEventRequest {
   EventMessage event = 1;
 }
